@@ -71,8 +71,9 @@ public class AsistenciaxServiceImp implements AsistenciaxService{
 
     @Override
     public Asistenciax getEntidadById(Long id) {
-        return asisRepository.findById(id)
+        Asistenciax findEntidad = asisRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Materialesx not exist with id :" + id));
+        return findEntidad;        
     }
 
     @Override

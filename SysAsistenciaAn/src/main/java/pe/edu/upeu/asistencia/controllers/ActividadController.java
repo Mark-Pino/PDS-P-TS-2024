@@ -37,6 +37,7 @@ public class ActividadController {
     @GetMapping(value = "/list")
     public ResponseEntity<List<Actividad>> listActividad() {
         List<Actividad> actDto = actividadService.findAll();
+        
 
         return ResponseEntity.ok(actDto);
     }

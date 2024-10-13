@@ -43,6 +43,10 @@ public class PeriodoController {
     
     @PostMapping("/crear")
     public ResponseEntity<Periodo> createPeriodo(@RequestBody Periodo periodo) {
+        /*Periodo varEnt=Periodo.builder()
+                .nombre(periodo.nombre())
+                .estado(periodo.estado())
+                .build();*/
         Periodo data = periodoService.save(periodo);
         return ResponseEntity.ok(data);
     }

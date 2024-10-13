@@ -66,7 +66,8 @@ public class ActividadServiceImp implements ActividadService{
 
     @Override
     public Actividad getActividadById(Long id) {
-        return actividadRepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Activiad not exist with id :" + id));
+        Actividad findActividad = actividadRepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Activiad not exist with id :" + id));
+        return findActividad;        
     }
 
     @Override

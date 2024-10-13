@@ -38,15 +38,15 @@ public class Materiales {
     private Long id; 
     @Column(name = "mater_entre", nullable = true, length = 200)
     private String materEntre;   
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")    
     @Basic(optional = false)
     @Column(name = "fecha", nullable = false)
     @Temporal(TemporalType.DATE)
-    private Date fecha;
-    @Basic(optional = false)
+    private Date fecha;   
+    @Basic(optional = false)    
     @Column(name = "hora_reg", nullable = false)
     @Temporal(TemporalType.TIME)
-    private Date horaReg;
+    private Date horaReg;  
     @Size(max = 60)
     private String latitud;
     @Size(max = 60)

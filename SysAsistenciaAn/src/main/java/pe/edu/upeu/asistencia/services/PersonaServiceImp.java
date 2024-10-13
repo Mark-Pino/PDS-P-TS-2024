@@ -23,10 +23,9 @@ import pe.edu.upeu.asistencia.repositories.PersonaRepository;
 @Service
 @Transactional
 public class PersonaServiceImp implements PersonaService{
+    
 
     private final PersonaRepository entidadRepo;
-
-    private static final String MENSAJE_PER = "Persona not exist with id :";
     
     @Override
     public Persona save(Persona entidad) {
@@ -41,7 +40,7 @@ public class PersonaServiceImp implements PersonaService{
     @Override
     public Map<String, Boolean> delete(Long id) {
         Persona entidadx = entidadRepo.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException(MENSAJE_PER + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Persona not exist with id :" + id));
         entidadRepo.delete(entidadx);
         Map<String, Boolean> response = new HashMap<>();
         response.put("deleted", true);
@@ -51,13 +50,14 @@ public class PersonaServiceImp implements PersonaService{
 
     @Override
     public Persona geEntidadById(Long id) {
-        return entidadRepo.findById(id).orElseThrow(() -> new ResourceNotFoundException(MENSAJE_PER + id));
+        Persona findEntidad = entidadRepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Persona not exist with id :" + id));
+        return findEntidad;        
     }
 
     @Override
     public Persona update(Persona entidad, Long id) {
         Persona entidadx = entidadRepo.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException(MENSAJE_PER + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Persona not exist with id :" + id));
         entidadx.setCelular(entidad.getCelular());
         entidadx.setTipo(entidad.getTipo());
         entidadx.setEstado(entidad.getEstado());

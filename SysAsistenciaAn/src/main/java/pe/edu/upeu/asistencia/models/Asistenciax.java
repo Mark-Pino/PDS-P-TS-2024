@@ -38,20 +38,20 @@ public class Asistenciax {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")    
     @Basic(optional = false)
     @Column(name = "fecha", nullable = false)
     @Temporal(TemporalType.DATE)
     private LocalDate fecha;
     @JsonFormat(pattern = "HH:mm:ss")
-    @Basic(optional = false)
+    @Basic(optional = false)    
     @Column(name = "hora_reg", nullable = false)
     @Temporal(TemporalType.TIME)
     private LocalTime horaReg;
     @Size(max = 60)
     private String latituda;
     @Size(max = 60)
-    private String longituda;
+    private String longituda;    
     @Size(max = 20)
     @Column(name = "tipo",length = 20,nullable = false)
     private String tipo;

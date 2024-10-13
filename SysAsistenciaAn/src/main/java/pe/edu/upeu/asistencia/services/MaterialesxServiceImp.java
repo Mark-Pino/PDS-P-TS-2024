@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -26,7 +25,7 @@ import pe.edu.upeu.asistencia.repositories.MaterialesxRepository;
  *
  * @author DELL
  */
-@Slf4j
+
 @RequiredArgsConstructor
 @Service
 @Transactional
@@ -45,9 +44,8 @@ public class MaterialesxServiceImp implements MaterialesxService {
 
         Materialesx matEnt=materialesxMapper.materialesxCrearDtoToMaterialesx(materialesx);
         matEnt.setActividadId(actividadService.getActividadById(materialesx.actividadId()));
-
-        log.info("Fecha: {}", materialesx.fecha());
-        log.info("Hora de Registro: {}", materialesx.horaReg());
+        System.out.println(materialesx.fecha());
+        System.out.println(materialesx.horaReg());
         try {
             return materialesxRepo.save(matEnt);
         } catch (Exception e) {
@@ -78,15 +76,16 @@ public class MaterialesxServiceImp implements MaterialesxService {
 
     @Override
     public Materialesx getMaterialesxById(Long id) {
-        return materialesxRepo.findById(id)
+        Materialesx findMaterialesx = materialesxRepo.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Materialesx not exist with id :" + id));
+        return findMaterialesx;
     }
 
     @Override
     public Materialesx update(MaterialesxDto.MaterialesxCrearDto materialesx, Long id) {
         Materialesx materialesxx = materialesxRepo.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Periodo not exist with id :" + id));
-        log.info("IMPRIME: {}", materialesx.modFh());
+            System.out.println("IMPRIME:"+materialesx.modFh());
         materialesxx.setFecha(materialesx.fecha());
         materialesxx.setHoraReg(materialesx.horaReg());
         materialesxx.setOfflinex(materialesx.offlinex());

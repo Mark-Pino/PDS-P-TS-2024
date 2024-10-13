@@ -50,7 +50,8 @@ public class InscritoServiceImp implements InscritoService {
 
     @Override
     public Inscrito getEntidadById(Long id) {
-        return inscritoRepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Activiad not exist with id :" + id));
+        Inscrito findInscrito = inscritoRepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Activiad not exist with id :" + id));
+        return findInscrito;
     }
 
     @Override

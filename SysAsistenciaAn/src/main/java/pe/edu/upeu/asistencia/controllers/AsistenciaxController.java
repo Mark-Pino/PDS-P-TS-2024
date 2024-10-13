@@ -34,6 +34,7 @@ public class AsistenciaxController {
     public ResponseEntity<List<Asistenciax>> listMaterialesx() {
         List<Asistenciax> actDto = asistenciaxService.findAll();
         return ResponseEntity.ok(actDto);
+        // return new ResponseEntity<>(actDto, HttpStatus.OK);
     }  
     
     @PostMapping("/crear")

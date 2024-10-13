@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.edu.upeu.asistencia.dtos.MaterialesxDto;
@@ -34,10 +35,15 @@ public class MaterialesxController {
     @Autowired
     private MaterialesxService materialesxService;
 
-    @GetMapping(value = "/list")
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public ResponseEntity<List<Materialesx>> listMaterialesx() {
         List<Materialesx> actDto = materialesxService.findAll();
+
+        // Gson gson = new Gson();
+        // String jsonCartList = gson.toJson(actDto);
+        // System.out.println("Ver Aqui: "+jsonCartList);
         return ResponseEntity.ok(actDto);
+        // return new ResponseEntity<>(actDto, HttpStatus.OK);
     }
 
     @PostMapping("/crear")

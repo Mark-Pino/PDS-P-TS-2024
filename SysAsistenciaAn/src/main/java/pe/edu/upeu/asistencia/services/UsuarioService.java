@@ -51,10 +51,12 @@ public class UsuarioService {
 
         Usuario user = userMapper.usuarioCrearDtoToUser(userDto);
         user.setPassword(passwordEncoder.encode(CharBuffer.wrap(userDto.password())));
+         //System.out.println("Llego.................");
+         //System.out.println(userDto.token());
         
          Set<Rol> roles = new HashSet<>();
         roles.add(rolService.getByRolNombre(Rol.RolNombre.ROLE_USER).get());
-
+        //if (userDto.roles().contains(Rol.RolNombre.ROLE_ADMIN))
         if (userDto.token().equals("admin"))       
             roles.add(rolService.getByRolNombre(Rol.RolNombre.ROLE_ADMIN).get());
         user.setRoles(roles);

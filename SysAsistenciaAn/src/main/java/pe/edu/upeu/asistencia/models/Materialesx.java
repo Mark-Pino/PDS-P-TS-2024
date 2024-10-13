@@ -40,37 +40,37 @@ public class Materialesx {
     private Long id;
     @Size(max = 20)
     @Column(name = "cui",length = 20,nullable = false)
-    private String cui;
+    private String cui;  
     @Size(max = 20)
     @Column(name = "tipo_cui",length = 20,nullable = false)
-    private String tipoCui;
+    private String tipoCui; 
     @Column(name = "mater_entre", nullable = true, length = 200)
-    private String materEntre;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    private String materEntre;  
+    @JsonFormat(pattern = "yyyy-MM-dd")    
     @Basic(optional = false)
     @Column(name = "fecha", nullable = false)
     @Temporal(TemporalType.DATE)
-    private LocalDate fecha;
-    @JsonFormat(pattern = "HH:mm:ss")
-    @Basic(optional = false)
+    private LocalDate fecha;  
+    @JsonFormat(pattern = "HH:mm:ss") 
+    @Basic(optional = false)    
     @Column(name = "hora_reg", nullable = false)
     @Temporal(TemporalType.TIME)
-    private LocalTime horaReg;
+    private LocalTime horaReg;    
     @Size(max = 60)
     private String latituda;
     @Size(max = 60)
-    private String longituda;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    private String longituda; 
+    @JsonFormat(pattern = "yyyy-MM-dd") 
     @Basic(optional = false)
     @Column(name = "mod_fh", nullable = false)
     @Temporal(TemporalType.DATE)
-    private LocalDate modFh;
+    private LocalDate modFh;     
     @Size(max = 2)
     @Column(name="offlinex",length = 2,nullable = false)
-    private String offlinex;
-
+    private String offlinex;  
+    
     @JoinColumn(name = "actividad_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     @JsonIgnoreProperties({"asistenciaxs", "inscritos", "subactasisxs", "materialesxs"})
-    private Actividad actividadId;
+    private Actividad actividadId;     
 }

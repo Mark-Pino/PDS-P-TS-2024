@@ -36,12 +36,12 @@ public class Asistencia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")    
     @Basic(optional = false)
     @Column(name = "fecha", nullable = false)
     @Temporal(TemporalType.DATE)
-    private Date fecha;
-    @Basic(optional = false)
+    private Date fecha; 
+    @Basic(optional = false)    
     @Column(name = "hora_reg", nullable = false)
     @Temporal(TemporalType.TIME)
     private Date horaReg;    

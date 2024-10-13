@@ -4,6 +4,7 @@
  */
 package pe.edu.upeu.asistencia.dtos;
 
+//import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -27,7 +28,8 @@ public class PeriodoDto {
      Long id;
      String nombre;
      String estado;
-
+    // List<Matricula> matriculas;
+    // List<Evento> eventos
     @JsonIgnoreProperties({"periodoId"})
     List<Matricula> matriculas;     
     @JsonIgnoreProperties({"periodoId"})

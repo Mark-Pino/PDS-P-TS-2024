@@ -27,10 +27,12 @@ import pe.edu.upeu.asistencia.repositories.PeriodoRepository;
 @Transactional
 public class PeriodoServiceImp implements PeriodoService {
 
-    private final PeriodoRepository periodoRepo;
+    @Autowired
+    private PeriodoRepository periodoRepo;
 
-    private static final String MENSAJE_PER = "Periodo not exist with id:";
+    private static final String MENSAJE_PER="Periodo not exist with id :";
 
+    
     @Override
     public Periodo save(Periodo periodo) {
         return periodoRepo.save(periodo);

@@ -68,7 +68,7 @@ public class Evento {
     @Column(name = "perfil_evento", nullable = false, length = 20)
     private String perfilEvento;
     @Column(name = "user_create", nullable = false, length = 100)
-    private String userCreate;
+    private String userCreate; 
     @Column(name = "mater", nullable = true, length = 200)
     private String mater;
     @Column(name = "valid_insc", nullable = false, length = 2)
@@ -79,7 +79,7 @@ public class Evento {
     private String entsal;
     @Size(max = 2)
     @Column(name = "offlinex", length = 2, nullable = false)
-    private String offlinex;
+    private String offlinex;   
     
     @JoinColumn(name = "periodo_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
