@@ -10,13 +10,14 @@ pipeline {
         stage('Clone') {
             steps {
                 timeout(time: 2, unit: 'MINUTES'){
-                    git branch: 'main', credentialsId: 'github_pat_token', url: 'https://github.com/Mark-Pino/PDS-P-TS-2024.git'
+                    git branch: 'main', credentialsId: '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', url: 'https://github.com/Mark-Pino/PDS-P-TS-2024.git'
                 }
             }
         }
         stage('Build') {
             steps {
                 timeout(time: 8, unit: 'MINUTES'){
+		    // sh "mvn clean package -f SysAsistenciaAn/pom.xml"
                     sh "mvn -DskipTests clean package -f SysAsistenciaAn/pom.xml"
                 }
             }
