@@ -1,4 +1,7 @@
 # PDS-P-TS-2024
+## Clase 14/10/202#4
+### Capturas de pantalla
+
 ## Clase 07/10/202#4
 ### Captura de pantalla
 ![image](https://github.com/user-attachments/assets/dbdcb585-0d8f-46f6-9d8f-10a2a05508e3)
