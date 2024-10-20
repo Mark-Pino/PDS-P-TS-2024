@@ -27,6 +27,7 @@ import pe.edu.upeu.asistencia.services.ActividadService;
  *
  * @author DELL
  */
+// Mark Roger Pino Chata
 @RestController
 @RequestMapping("/asis/actividad")
 public class ActividadController {
