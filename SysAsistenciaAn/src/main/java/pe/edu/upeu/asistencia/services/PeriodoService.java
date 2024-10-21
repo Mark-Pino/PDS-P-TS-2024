@@ -25,4 +25,6 @@ public interface PeriodoService {
 
     Periodo update(Periodo periodo, Long id);
 
+    Long periodoIdMax();
+
 }

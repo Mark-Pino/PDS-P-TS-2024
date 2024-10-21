@@ -56,6 +56,12 @@ public class PeriodoController {
         Periodo periodo = periodoService.getPeriodoById(id);
         return ResponseEntity.ok(periodo);
     }
+
+    @GetMapping("/buscarmaxid")
+    public ResponseEntity<Long> getPeriodoMaxId() {
+        Long idMax = periodoService.periodoIdMax();
+        return ResponseEntity.ok(idMax);
+    }
     
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<Map<String, Boolean>> deletePeriodo(@PathVariable Long id) {

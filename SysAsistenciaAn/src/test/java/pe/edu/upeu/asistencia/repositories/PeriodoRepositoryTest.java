@@ -64,7 +64,7 @@ public class PeriodoRepositoryTest {
         List<Periodo> periodos = periodoRepository.findAll();
         System.out.println(periodos.size());
         System.out.println("ID:"+periodos.get(0).getId());
-        Assertions.assertEquals(periodos.size(),1);
+        Assertions.assertEquals(periodos.size(),3);
     }
 
     @Order(6)
